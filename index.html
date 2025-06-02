@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Резюме — Кушманов Илья</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+      body {
+        margin: 0;
+        padding: 60px;
+        background-color: #ffffff;
+        font-family: "Inter", sans-serif;
+      }
+
+      .resume {
+        position: relative;
+        background: white;
+        border: 4px solid #8e44ad;
+        border-radius: 30px;
+        padding: 40px;
+        width: 800px;
+        margin: auto;
+        box-shadow: 0 0 8px #8e44ad, 0 0 12px #8e44ad, 0 0 16px #8e44ad,
+          0 0 20px #8e44ad;
+      }
+
+      .profile-photo {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 10px #8e44ad;
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 28px;
+        color: #222;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        font-size: 20px;
+        color: #444;
+      }
+
+      p,
+      li {
+        line-height: 1.6;
+        color: #333;
+        margin: 6px 0;
+      }
+
+      .section {
+        margin-top: 30px;
+      }
+
+      .contact {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .highlight {
+        font-weight: 600;
+        color: #000;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding-left: 20px;
+      }
+
+      /* Добавленные стили для тегов */
+      .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 15px 0;
+      }
+
+      .tag {
+        background: #f3f4f6;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume">
+      <img src="photo.jpg" alt="Фото" class="profile-photo" />
+      <h1>Кушманов Илья</h1>
+      <div class="contact">
+        🎯 <span class="highlight">Frontend/Fullstack Developer</span><br />
+        📍 <span class="highlight">Новосибирск, Россия</span> (удалёнка)<br />
+        ✉️ <span class="highlight">ilya.ilya3463@gmail.com</span><br />
+        💼 GitHub:
+        <span class="highlight">
+          <a href="https://github.com/Kushiko" target="_blank"
+            >github.com/Kushiko</a
+          > </span
+        ><br />
+        💬 Telegram:
+        <span class="highlight">
+          <a href="https://t.me/kushiko" target="_blank">@the_sterres</a>
+        </span>
+      </div>
+
+      <!-- О Себе -->
+      <div class="section">
+        <h2>💡 О себе</h2>
+        <p>
+          Frontend/Fullstack разработчик с 2-ух летним опытом в гибридных
+          командах (2–5 чел, Agile/Scrum). Основной стек:
+          <strong>React, TypeScript, Tailwind CSS, Astro, Preact</strong>.
+        </p>
+        <p>
+          Опыт руководства командой из 5 человек. Активный пользователь
+          <strong>Linux</strong> (Fedora, Arch) и контрибьютор в open-source.
+        </p>
+      </div>
+
+      <!-- Опыт работы -->
+      <div class="section">
+        <h2>💼 Опыт работы</h2>
+
+        <p>
+          <strong>Техлид Frontend, Telegram Mini App</strong> (сентябрь —
+          декабрь 2024)
+        </p>
+        <ul>
+          <li>
+            Спроектировал архитектуру фронтенда на
+            <strong>React + TypeScript</strong> с интеграцией Telegram WebApp
+            API и улучшил время запуска UI.
+          </li>
+          <li>
+            Настроил дизайн-систему на <strong>Tailwind CSS</strong>,
+            стандартизировал UI-компоненты, сократив время верстки.
+          </li>
+          <li>
+            Внедрил <strong>CI/CD</strong> (GitHub Actions) и Code Review,
+            снизив количество ошибок в продакшене и ускорив разработку.
+          </li>
+          <li>
+            Руководил командой из 5 разработчиков, распределял задачи по git
+            flow, увеличил скорость выпуска фич проекта.
+          </li>
+          <li>
+            Интегрировал backend API, реализовал устойчивую обработку ошибок и
+            загрузку данных, улучшил стабильность на <strong>~15%</strong>.
+          </li>
+        </ul>
+        <div class="tag-container">
+          <span class="tag">React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Team Leadership</span>
+        </div>
+
+        <p>
+          <strong>Fullstack-разработчик (фриланс)</strong> (январь 2023 —
+          настоящее время)
+        </p>
+        <ul>
+          <li>
+            о Полная разработка сайта автостраховой кмпании (<strong
+              >Preact, Astro, TypeScript, Tailwind, Vite, Baserow</strong
+            >), ускорил загрузку компонентов на <strong>40%</strong>, переписав
+            BackEnd на Astro API Endpoints.
+          </li>
+          <li>
+            Вёрстка и лендинга стартапа на
+            <strong>Astro + Web Components</strong>
+          </li>
+        </ul>
+        <div class="tag-container">
+          <span class="tag">Preact</span>
+          <span class="tag">Astro</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">Vite</span>
+          <span class="tag">Baserow</span>
+        </div>
+      </div>
+
+      <!-- Ключевые навыки -->
+      <div class="section">
+        <h2>⚡ Ключевые навыки</h2>
+        <p>
+          <strong>Frontend:</strong> React, Next.js, Preact, TypeScript,
+          Zustand, Tailwind CSS, Astro, HTML, CSS, JavaScript
+        </p>
+        <p><strong>Backend:</strong> REST API, Python (Flask)</p>
+        <p>
+          <strong>DevOps:</strong> Docker, Vercel, Netlify, CI/CD (GitHub
+          Actions), Git, Webpack, Vite
+        </p>
+        <p><strong>Тестирование:</strong> Jest, React Testing Library</p>
+        <p>
+          <strong>Оптимизация:</strong> SSR, Bundle Splitting, Lazy Loading,
+          Lighthouse, Web Vitals
+        </p>
+        <p><strong>Методологии:</strong> Agile, Scrum</p>
+        <p>
+          <strong>Инструменты:</strong> Figma, Postman, Linux (Fedora, Arch),
+          Bash
+        </p>
+      </div>
+
+      <!-- Образование и развитие -->
+      <div class="section">
+        <h2>🎓 Образование и развитие</h2>
+        <ul>
+          <li>
+            СибГУТИ, Разработка и дизайн в медиаиндустрии (2024–2028) — Бакалавр
+          </li>
+          <li>
+            Самостоятельные курсы: React + TypeScript, Алгоритмы, Web
+            Performance Optimization (2022–2023)
+          </li>
+        </ul>
+      </div>
+
+      <!-- Вне кода -->
+      <div class="section">
+        <h2>🧩 Вне кода</h2>
+        <p>
+          Занимаюсь волейболом и посещаю спортзал. Интересуюсь технической
+          литературой и открытым исходным кодом.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
