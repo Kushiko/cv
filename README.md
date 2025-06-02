@@ -1,0 +1,1 @@
+Hi, I’m Ilya Kushmanov, a Fullstack Developer. This one-page HTML/CSS resume showcases my work with React, TypeScript, Tailwind CSS, Astro and Preact. I build and deploy fullstack applications, integrate REST APIs, and lead small teams to deliver features with real impact.
