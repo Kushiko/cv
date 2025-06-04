@@ -12,7 +12,13 @@
         background-color: #ffffff;
         font-family: "Inter", sans-serif;
       }
-
+      .resume-fade {
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.2;
+        transform: scale(0.98);
+        pointer-events: none;
+      }
       .resume {
         position: relative;
         background: white;
@@ -20,6 +26,8 @@
         padding: 40px;
         width: 800px;
         margin: auto;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .profile-photo {
@@ -44,13 +52,13 @@
         border-bottom: 1px solid #eee;
         padding-bottom: 5px;
         font-size: 20px;
-        color: #444;
+        color: black;
       }
 
       p,
       li {
         line-height: 1.6;
-        color: #333;
+        color: #222222;
         margin: 6px 0;
       }
 
@@ -262,29 +270,36 @@
     <script>
       let lang = "en";
       const button = document.getElementsByClassName("language-toggle")[0];
+      const resume = document.querySelector(".resume");
+      const translations = {};
 
-      function switchLanguage() {
-        lang = lang === "ru" ? "en" : "ru";
-        button.textContent = lang.toUpperCase();
-        const elements = document.querySelectorAll("[data-i18n]");
-        // Добавляем fade
-        elements.forEach((el) => el.classList.add("fade"));
-        fetch(`translations/${lang}.json`)
-          .then((response) => response.json())
-          .then((translations) => {
-            setTimeout(() => {
-              elements.forEach((element) => {
-                const key = element.getAttribute("data-i18n");
-                element.innerHTML = translations[key];
-                element.classList.remove("fade");
-              });
-            }, 300); // Длительность анимации
-          });
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
+      // Подгрузка переводов
+      Promise.all([
+        fetch("translations/ru.json")
+          .then((r) => r.json())
+          .then((data) => (translations["ru"] = data)),
+        fetch("translations/en.json")
+          .then((r) => r.json())
+          .then((data) => (translations["en"] = data)),
+      ]).then(() => {
         switchLanguage(lang); // ru default
       });
+
+      function switchLanguage(forceLang) {
+        lang = forceLang || (lang === "ru" ? "en" : "ru");
+        button.textContent = lang.toUpperCase();
+
+        resume.classList.add("resume-fade");
+
+        setTimeout(() => {
+          const dict = translations[lang];
+          document.querySelectorAll("[data-i18n]").forEach((element) => {
+            const key = element.getAttribute("data-i18n");
+            if (dict[key]) element.innerHTML = dict[key];
+          });
+          resume.classList.remove("resume-fade");
+        }, 300);
+      }
     </script>
   </body>
 </html>
