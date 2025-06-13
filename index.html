@@ -269,10 +269,10 @@
 
       // Предзагрузка переводов
       Promise.all([
-        fetch("translations/ru.json")
+        fetch("public/translations/ru.json")
           .then((r) => r.json())
           .then((data) => (translations["ru"] = data)),
-        fetch("translations/en.json")
+        fetch("public/translations/en.json")
           .then((r) => r.json())
           .then((data) => (translations["en"] = data)),
       ]).then(() => {
